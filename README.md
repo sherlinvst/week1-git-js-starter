@@ -45,19 +45,31 @@ week1-git-js-starter/
 
 ### Setup Instructions
 
-1. **Clone or navigate to this project directory**
+1. **Fork this repository**
+   - Click the "Fork" button at the top right of this repository
+   - This creates your own copy of the project
+
+2. **Add Tech Lead as a collaborator**
+   - Go to your forked repository on GitHub
+   - Click on "Settings" → "Collaborators"
+   - Click "Add people"
+   - Add your Tech Lead's GitHub username
+   - This allows them to review your work
+
+3. **Clone your forked repository**
 
    ```bash
+   git clone https://github.com/YOUR-USERNAME/week1-git-js-starter.git
    cd week1-git-js-starter
    ```
 
-2. **Install dependencies**
+4. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-3. **Run the main application**
+5. **Run the main application**
 
    ```bash
    npm start
