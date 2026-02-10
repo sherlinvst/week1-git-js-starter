@@ -47,7 +47,7 @@ console.log('--- Async Programming ---');
 // TODO: Uncomment and test the async demos once implemented
 asyncDemo.demonstrateCallbacks();
 asyncDemo.demonstratePromises();
-// asyncDemo.demonstrateAsyncAwait();
+asyncDemo.demonstrateAsyncAwait();
 
 console.log('(Async demos not yet implemented)\n');
 
