@@ -27,8 +27,10 @@ function fetchUserCallback(userId, callback) {
         name: `User ${userId}`,
         email: `user${userId}@example.com`,
       };
+      callback(null, userData);
       // Call callback with success data
     } else {
+      callback(new Error(), null);  
       // Call callback with error
     }
   }, 1000);
@@ -39,6 +41,13 @@ function fetchUserCallback(userId, callback) {
  */
 function demonstrateCallbacks() {
   console.log('\n=== Callback Demo ===');
+  fetchUserCallback(0, (error, userData) => {
+    if (error){
+      console.log(error);
+    } else {
+      console.log(userData);
+    }
+  });
   // TODO: Call fetchUserCallback and handle the result
   // Hint: Pass a callback function that logs the result or error
 }
@@ -67,8 +76,10 @@ function fetchUserPromise(userId) {
           name: `User ${userId}`,
           email: `user${userId}@example.com`,
         };
+        resolve(userData)
         // Resolve with user data
       } else {
+        reject(new Error());
         // Reject with error
       }
     }, 1000);
@@ -83,6 +94,11 @@ function demonstratePromises() {
   // TODO: Call fetchUserPromise and chain .then() and .catch()
   // Hint: Use .then() to handle success and .catch() to handle errors
   // Log the results to console
+  const promise = fetchUserPromise(1).then(success => {
+    console.log(success);
+  }).catch(errors => {
+    console.log(errors);
+  })
 }
 
 // ============================================
@@ -97,6 +113,11 @@ function demonstratePromises() {
 function delay(ms) {
   // TODO: Return a promise that resolves after ms milliseconds
   // Hint: Use setTimeout inside a Promise
+  return new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+
+    }, ms);
+  });
 }
 
 /**

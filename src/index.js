@@ -18,13 +18,13 @@ console.log('=== Week 1: Git & JavaScript Starter ===\n');
 console.log('--- Math Utilities ---');
 
 // TODO: Uncomment and test these once you implement the math functions
-// console.log('5 + 3 =', math.add(5, 3));
-// console.log('10 - 4 =', math.subtract(10, 4));
-// console.log('6 * 7 =', math.multiply(6, 7));
-// console.log('20 / 4 =', math.divide(20, 4));
-// console.log('2^8 =', math.power(2, 8));
+console.log('5 + 3 =', math.add(5, 3));
+console.log('10 - 4 =', math.subtract(4, 10));
+console.log('6 * 7 =', math.multiply(6, 7));
+console.log('20 / 4 =', math.divide(20, 0));
+console.log('2^8 =', math.power(2, 8));
 
-console.log('(Math functions not yet implemented)\n');
+// console.log('(Math functions not yet implemented)\n');
 
 // ============================================
 // Part 2: String Utilities Demo
@@ -32,12 +32,12 @@ console.log('(Math functions not yet implemented)\n');
 console.log('--- String Utilities ---');
 
 // TODO: Uncomment and test these once you implement the string functions
-// console.log('Capitalize "hello" =', strings.capitalize('hello'));
-// console.log('Reverse "javascript" =', strings.reverse('javascript'));
-// console.log('Is "racecar" a palindrome?', strings.isPalindrome('racecar'));
-// console.log('Word count in "Hello World" =', strings.wordCount('Hello World'));
+console.log('Capitalize "hello" =', strings.capitalize('hello'));
+console.log('Reverse "javascript" =', strings.reverse('javascript'));
+console.log('Is "racecar" a palindrome?', strings.isPalindrome('racecar'));
+console.log('Word count in "Hello World" =', strings.wordCount('Hello World'));
 
-console.log('(String functions not yet implemented)\n');
+// console.log('(String functions not yet implemented)\n');
 
 // ============================================
 // Part 3: Async Programming Demo
@@ -45,8 +45,8 @@ console.log('(String functions not yet implemented)\n');
 console.log('--- Async Programming ---');
 
 // TODO: Uncomment and test the async demos once implemented
-// asyncDemo.demonstrateCallbacks();
-// asyncDemo.demonstratePromises();
+asyncDemo.demonstrateCallbacks();
+asyncDemo.demonstratePromises();
 // asyncDemo.demonstrateAsyncAwait();
 
 console.log('(Async demos not yet implemented)\n');

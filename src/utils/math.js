@@ -12,6 +12,7 @@
 function add(a, b) {
   // TODO: Implement addition
   // Hint: Return the sum of a and b
+  return a + b;
 }
 
 /**
@@ -23,6 +24,7 @@ function add(a, b) {
 function subtract(a, b) {
   // TODO: Implement subtraction
   // Hint: Return a minus b
+  return a - b;
 }
 
 /**
@@ -34,6 +36,7 @@ function subtract(a, b) {
 function multiply(a, b) {
   // TODO: Implement multiplication
   // Hint: Return the product of a and b
+  return a * b;
 }
 
 /**
@@ -46,7 +49,14 @@ function divide(a, b) {
   // TODO: Implement division
   // Hint: Check if b is zero first to avoid division by zero error
   // Return an appropriate value or throw an error if b is zero
-}
+  try{
+    if (b == 0){
+        throw new Error();
+    } else return a/b;
+  }catch (Error){
+        console.error("Cannot divide by zero.");
+    }
+} 
 
 /**
  * Raises base to the power of exponent
@@ -57,6 +67,7 @@ function divide(a, b) {
 function power(base, exponent) {
   // TODO: Implement exponentiation
   // Hint: Use Math.pow() or the ** operator
+  return Math.pow(base, exponent);
 }
 
 // Export all functions
