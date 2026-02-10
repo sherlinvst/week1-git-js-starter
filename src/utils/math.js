@@ -49,13 +49,12 @@ function divide(a, b) {
   // TODO: Implement division
   // Hint: Check if b is zero first to avoid division by zero error
   // Return an appropriate value or throw an error if b is zero
-  try{
-    if (b == 0){
-        throw new Error();
-    } else return a/b;
-  }catch (Error){
-        console.error("Cannot divide by zero.");
+  function divide(a, b) {
+    if (b === 0) {
+      throw new Error("Cannot divide by zero.");
     }
+    return a / b;
+  }
 } 
 
 /**
