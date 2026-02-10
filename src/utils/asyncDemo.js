@@ -113,9 +113,9 @@ function demonstratePromises() {
 function delay(ms) {
   // TODO: Return a promise that resolves after ms milliseconds
   // Hint: Use setTimeout inside a Promise
-  return new Promise((resolve, reject)=>{
+  return new Promise((resolve)=>{
     setTimeout(()=>{
-
+      resolve()
     }, ms);
   });
 }
@@ -130,6 +130,20 @@ async function fetchMultipleUsers(userIds) {
   // Hint: Use a loop and await fetchUserPromise for each ID
   // Use try/catch to handle errors
   // Return an array of all user data
+
+  const userList = [];
+
+  try{
+    for (const id of userIds){
+      let user = await fetchUserPromise(id);
+      userList.push(user);
+    }
+    return userList;
+  } catch (error){
+    console.error(error);
+    throw error;
+  }
+  
 }
 
 /**
@@ -140,6 +154,14 @@ async function demonstrateAsyncAwait() {
   // TODO: Call fetchMultipleUsers with an array of user IDs
   // Use try/catch to handle any errors
   // Log the results
+  try {
+    const userList = await fetchMultipleUsers([1,2,0]);
+    console.log("Success.", userList);
+  } catch (error) {
+    console.log("Failed.");
+  }
+  
+
 }
 
 // ============================================
@@ -155,6 +177,8 @@ async function fetchUsersParallel(userIds) {
   // TODO: Implement this using Promise.all()
   // Hint: Map userIds to promises, then use Promise.all()
   // This is faster than sequential fetching!
+  const promiseArray = userIds.map(fetchUserPromise);
+  return await Promise.all(promiseArray);
 }
 
 // Export functions
