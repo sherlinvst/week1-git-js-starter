@@ -40,7 +40,7 @@ function addNote(title, content) {
   // 5. Return the created note
   let newNote = null;
   if (title === "" || content === ""){
-    throw new Error("Missing fields.");// ensure title and content are not empty strings
+    throw new Error("Missing fields.");// To ensure title and content are not empty strings
   } else {
       newNote = {
       id : nextId,
