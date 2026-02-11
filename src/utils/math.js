@@ -12,7 +12,6 @@
 function add(a, b) {
   // TODO: Implement addition
   // Hint: Return the sum of a and b
-  const sum = a + b;
   return sum;
 }
 
