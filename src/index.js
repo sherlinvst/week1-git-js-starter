@@ -79,10 +79,35 @@ console.log('--- Your Code Here ---');
 // - Combine multiple functions together
 
 console.log("Other tests for Math Utilities");
-console.log("5 / 0", math.divide(5,0));
-
-console.log("Other tests for Strings Utilities");
+try {
+  console.log("5 / 0", math.divide(5, 0));
+} catch (err) {
+  console.log(err.message);
+}
+console.log("\nOther tests for Strings Utilities");
 console.log("Capitalize (empty string) =", strings.capitalize(""));
 console.log('Is "laptop" a palindrome?', strings.isPalindrome("laptop"));
 console.log('Word count in " be alive " =', strings.wordCount(" be alive "));
+
+console.log("\nOther tests for Notes App");
+try {
+  const note3 = notesApp.addNote("", "Finish task.");
+} catch (err) {
+  console.log(err.message);
+}
+console.log("All notes:", notesApp.getAllNotes());
+let updatedNote = notesApp.updateNote(0, "Testing", "Notes");
+if (updatedNote) console.log("Updated.");
+else console.log("Not found.");
+console.log('Find note 0:', notesApp.getNoteById(0));
+updatedNote = notesApp.updateNote(1, "Testing", "Notes");
+console.log("All notes after update:", notesApp.getAllNotes());
+notesApp.deleteAllNotes();
+console.log("All notes after deletion:", notesApp.getAllNotes());
+const note4 = notesApp.addNote("Watch", "Harry Potter");
+const note5 = notesApp.addNote("Drink", "Water");
+console.log("Number of notes: ", notesApp.getNotesCount());
+console.log("Unsorted notes: ", notesApp.getAllNotes());
+console.log("Ascending notes: ", notesApp.getNotesSortedByDate());
+console.log("Descending notes: ", notesApp.getNotesSortedByDate(true));
 console.log('\n=== Keep coding! ===');
