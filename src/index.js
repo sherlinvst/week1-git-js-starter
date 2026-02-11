@@ -106,6 +106,8 @@ notesApp.deleteAllNotes();
 console.log("All notes after deletion:", notesApp.getAllNotes());
 const note4 = notesApp.addNote("Watch", "Harry Potter");
 const note5 = notesApp.addNote("Drink", "Water");
+const note6 = notesApp.addNote("Drink", "Juice");
+console.log("Notes with keyword 'Drink': ", notesApp.searchNotes("Drink"));
 console.log("Number of notes: ", notesApp.getNotesCount());
 console.log("Unsorted notes: ", notesApp.getAllNotes());
 console.log("Ascending notes: ", notesApp.getNotesSortedByDate());

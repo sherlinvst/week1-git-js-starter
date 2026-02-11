@@ -93,6 +93,7 @@ function searchNotes(keyword) {
   // Hint: Use filter() to find notes where title or content includes the keyword
   // Consider converting to lowercase for case-insensitive search
   // Return array of matching notes (empty array if none found)
+  keyword = keyword.toLowerCase();
   const noteFound = notes.filter(note => note.title.toLowerCase().includes(keyword) || note.content.toLowerCase().includes(keyword));
   return noteFound;
 }
