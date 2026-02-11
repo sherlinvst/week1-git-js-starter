@@ -50,7 +50,7 @@ function divide(a, b) {
   // Hint: Check if b is zero first to avoid division by zero error
   // Return an appropriate value or throw an error if b is zero
   if (b === 0) {
-    throw new Error("Cannot divide by zero.");
+    throw new Error("Cannot be divided by zero.");
   }
     return a / b;
 }
