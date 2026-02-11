@@ -32,7 +32,7 @@ console.log('2^8 =', math.power(2, 8));
 console.log('--- String Utilities ---');
 
 // TODO: Uncomment and test these once you implement the string functions
-console.log('Capitalize "helloo" =', strings.capitalize('helloo'));
+console.log('Capitalize "hello" =', strings.capitalize('hello'));
 console.log('Reverse "javascript" =', strings.reverse('javascript'));
 console.log('Is "racecar" a palindrome?', strings.isPalindrome('racecar'));
 console.log('Word count in "Hello World" =', strings.wordCount('Hello World'));
