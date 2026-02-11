@@ -17,7 +17,8 @@ function capitalize(str) {
     return str;
   }
   const charFront = str.charAt(0).toUpperCase();
-  return charFront + str.slice(1);
+  const capitalized = charFront + str.slice(1);
+  return capitalized;
 }
 
 /**
