@@ -38,20 +38,15 @@ function addNote(title, content) {
   // 3. Set both createdAt and updatedAt to current date (new Date())
   // 4. Push the note to the notes array
   // 5. Return the created note
-  let newNote = null;
-  if (title === "" || content === ""){
-    throw new Error("Missing fields.");// ensure that title and content are not empty strings
-  } else {
-    newNote = {
-      id : nextId,
-      title : title,
-      content : content,
-      createdAt : today,
-      updatedAt : today
-    }
-    notes.push(newNote);
-    nextId += 1;
+  const newNote = {
+    id : nextId,
+    title : title,
+    content : content,
+    createdAt : today,
+    updatedAt : today
   }
+  notes.push(newNote);
+  nextId += 1;
   return newNote;
 }
 
@@ -67,8 +62,7 @@ function getAllNotes() {
   // TODO: Implement getAllNotes
   // Hint: Return a copy of the notes array to prevent external modification
   // You can use the spread operator [...notes] or notes.slice()
-  const copyNotes = [...notes];
-  return copyNotes;
+  return [...notes];
 }
 
 /**
@@ -148,7 +142,7 @@ function deleteNote(id) {
   const index = notes.findIndex(note => note.id === id);
   if (index >= 0){
     notes.splice(index, 1);
-    return true;
+    return true
   }
   return false;
 }
