@@ -38,15 +38,20 @@ function addNote(title, content) {
   // 3. Set both createdAt and updatedAt to current date (new Date())
   // 4. Push the note to the notes array
   // 5. Return the created note
-  const newNote = {
-    id : nextId,
-    title : title,
-    content : content,
-    createdAt : today,
-    updatedAt : today
+  let newNote = null;
+  if (title === "" || content === ""){
+    throw new Error("Missing fields.");// ensure title and content are not empty strings
+  } else {
+      newNote = {
+      id : nextId,
+      title : title,
+      content : content,
+      createdAt : today,
+      updatedAt : today
+    }
+    notes.push(newNote);
+    nextId += 1;
   }
-  notes.push(newNote);
-  nextId += 1;
   return newNote;
 }
 
