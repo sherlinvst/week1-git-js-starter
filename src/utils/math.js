@@ -12,7 +12,7 @@
 function add(a, b) {
   // TODO: Implement addition
   // Hint: Return the sum of a and b
-  return sum;
+  return a + b;
 }
 
 /**
