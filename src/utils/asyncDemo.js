@@ -3,6 +3,8 @@
  * Examples of callbacks, promises, and async/await patterns
  */
 
+  const validId = 0; // Constant to check if id is valid and avoid magic numbers
+
 // ============================================
 // 1. CALLBACKS
 // ============================================
@@ -20,8 +22,7 @@ function fetchUserCallback(userId, callback) {
     // TODO: Complete this callback example
     // Hint: Call the callback with (null, userData) for success
     // or (error, null) for failure
-
-    if (userId > 0) {
+    if (userId > validId) {
       const userData = {
         id: userId,
         name: `User ${userId}`,
@@ -70,7 +71,7 @@ function fetchUserPromise(userId) {
       // Hint: Use resolve(userData) for success
       // Use reject(error) for failure
 
-      if (userId > 0) {
+      if (userId > validId) {
         const userData = {
           id: userId,
           name: `User ${userId}`,
