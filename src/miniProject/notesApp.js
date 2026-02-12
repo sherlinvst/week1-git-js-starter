@@ -7,7 +7,6 @@
 // In-memory storage for notes (array of note objects)
 let notes = [];
 let nextId = 1; // Auto-incrementing ID for new notes
-const today = new Date(); // For getting the date today
 
 /**
  * Note Object Structure:
@@ -46,8 +45,8 @@ function addNote(title, content) {
       id : nextId,
       title : title,
       content : content,
-      createdAt : today,
-      updatedAt : today
+      createdAt : new Date(),
+      updatedAt : new Date()
     }
     notes.push(newNote);
     nextId += 1;
@@ -127,7 +126,7 @@ function updateNote(id, newTitle, newContent) {
     if (newContent != ""){
       note.content = newContent;
     }
-    note.updatedAt = today;
+    note.updatedAt = new Date();
   }
   return note
 }
@@ -196,12 +195,14 @@ function getNotesSortedByDate(ascending = false) {
   // Compare createdAt dates
   // Return the sorted array
   const sortedNotes = getAllNotes();
-  if (ascending){
-    sortedNotes.sort((note1, note2) => note2 - note1);
-  }
-  else {
-    sortedNotes.sort((note1, note2) => note1 - note2);
-  }
+  sortedNotes.sort((a,b) => {
+    if (ascending){
+      return a.createdAt - b.createdAt;
+    }
+    else {
+      return b.createdAt - a.createdAt;
+    } 
+  });
   return sortedNotes
 }
 
