@@ -144,7 +144,7 @@ function deleteNote(id) {
   // TODO: Implement deleteNote
   // Hint: Use findIndex() to locate the note, then splice() to remove it
   // Return true if deleted, false if note wasn't found
-  const isValid = false;
+  let isValid = false;
   const validIndex = 0;
   const index = notes.findIndex(note => note.id === id);
   if (index >= validIndex){
