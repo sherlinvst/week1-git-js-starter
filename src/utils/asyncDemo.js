@@ -3,7 +3,7 @@
  * Examples of callbacks, promises, and async/await patterns
  */
 
-  const validId = 0; // Constant to check if id is valid and avoid magic numbers
+  const validId = 0; // Constant to check if id is valid
 
 // ============================================
 // 1. CALLBACKS
@@ -42,7 +42,7 @@ function fetchUserCallback(userId, callback) {
  */
 function demonstrateCallbacks() {
   console.log('\n=== Callback Demo ===');
-  fetchUserCallback(0, (error, userData) => {
+  fetchUserCallback(1, (error, userData) => {
     if (error){
       console.log(error);
     } else {
@@ -132,7 +132,7 @@ async function fetchMultipleUsers(userIds) {
   // Use try/catch to handle errors
   // Return an array of all user data
 
-  const userList = [];
+  let userList = [];
 
   try{
     for (const id of userIds){
@@ -156,7 +156,7 @@ async function demonstrateAsyncAwait() {
   // Use try/catch to handle any errors
   // Log the results
   try {
-    const userList = await fetchMultipleUsers([1,2,0]);
+    const userList = await fetchMultipleUsers([1,2,3]);
     console.log("Success.", userList);
   } catch (error) {
     console.log("Failed.");
@@ -178,7 +178,7 @@ async function fetchUsersParallel(userIds) {
   // TODO: Implement this using Promise.all()
   // Hint: Map userIds to promises, then use Promise.all()
   // This is faster than sequential fetching!
-  const promiseArray = userIds.map(fetchUserPromise);
+  const promiseArray = userIds.map((id) => fetchUserPromise(id));
   return await Promise.all(promiseArray);
 }
 
