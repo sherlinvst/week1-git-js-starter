@@ -166,7 +166,7 @@ function deleteAllNotes() {
   // 3. Reset nextId to 1
   // 4. Return the count of deleted notes
   const noteCount = getNotesCount();
-  notes.splice(0, noteCount);
+  notes = [];
   nextId = 1;
   return noteCount;
 }
